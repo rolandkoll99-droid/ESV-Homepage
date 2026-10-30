@@ -1,0 +1,135 @@
+/* ESV Grein – Verwaltung (nur PC-Version) */
+.kopf-aktionen { display: flex; gap: 10px; flex-wrap: wrap; }
+.kopf-aktionen .knopf { min-height: 44px; padding: 8px 16px; }
+.leise { color: var(--text-leise); }
+
+.anmeldung { display: flex; justify-content: center; padding-top: 64px; }
+.anmeldung__box { width: 100%; max-width: 420px; padding: 32px; }
+.anmeldung__box h1 { font-size: 36px; margin-bottom: 8px; }
+
+.arbeitsbereich { padding-top: 28px; }
+.reiter { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.reiter button { font: inherit; font-weight: 700; font-size: 16px; min-height: 48px; padding: 10px 18px; border-radius: 10px; border: 1px solid #C9D4DF; background: var(--weiss); color: var(--blau); cursor: pointer; }
+.reiter button[aria-selected="true"] { background: var(--blau); border-color: var(--blau); color: var(--weiss); }
+
+.bereich-kopf { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.bereich-kopf h2 { font-size: 32px; }
+.bereich-hinweis { color: var(--text-leise); margin-bottom: 16px; max-width: 760px; }
+
+.formular { display: grid; gap: 6px; }
+.formular label { font-weight: 600; font-size: 15px; color: var(--blau); margin-top: 8px; }
+.formular input, .formular select, .formular textarea {
+  font: inherit; font-size: 17px; padding: 11px 12px; border: 1px solid #B9C7D5; border-radius: 8px; background: var(--weiss); color: var(--text); min-height: 48px; width: 100%;
+}
+.formular textarea { min-height: 96px; resize: vertical; }
+.formular input:focus, .formular select:focus, .formular textarea:focus { outline: 3px solid var(--akzent); outline-offset: 0; border-color: var(--blau); }
+.formular .knopf { margin-top: 14px; }
+.feld-hilfe { font-size: 13px; color: var(--text-leise); margin: 0; }
+
+.editor { padding: 24px; margin-bottom: 20px; border: 2px solid var(--akzent); }
+.editor h3 { font-size: 22px; margin-bottom: 4px; }
+.editor__raster { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 4px 18px; }
+.editor__raster .breit { grid-column: 1 / -1; }
+.editor__knoepfe { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+
+.eintraege { overflow-x: auto; position: relative; }
+.eintraege table { width: 100%; border-collapse: collapse; min-width: 640px; }
+.eintraege th { text-align: left; background: #E8EEF4; color: var(--blau); padding: 12px 14px; font-size: 14px; }
+.eintraege td { padding: 12px 14px; border-top: 1px solid var(--linie); vertical-align: middle; }
+.eintraege tr.vorbei td { color: #8794A1; }
+.eintraege .aktionen { white-space: nowrap; text-align: right; }
+.mini { font: inherit; font-size: 14px; font-weight: 600; min-height: 40px; padding: 6px 12px; border-radius: 8px; border: 1px solid #B9C7D5; background: var(--weiss); color: var(--blau); cursor: pointer; margin-left: 6px; }
+.mini:hover { background: #E8EEF4; }
+.mini--weg { color: #A5281F; border-color: #E2B5B0; }
+.mini--weg.sicher { background: #A5281F; color: #fff; border-color: #A5281F; }
+.etikett { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: #EEF1F4; color: #5A6775; margin-left: 6px; }
+.schalter { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; color: var(--text-leise); cursor: pointer; }
+.schalter input { width: 20px; height: 20px; }
+
+.meldung { padding: 10px 14px; border-radius: 8px; margin: 10px 0 0; font-size: 15px; }
+.meldung--fehler { background: #FBE3E1; color: #7A1D16; }
+.meldung--ok { background: #E2F2E6; color: #1E5B30; }
+
+/* Fotos */
+.album-neu { padding: 20px 24px; margin-bottom: 20px; }
+.album-neu .editor__raster { align-items: end; }
+.album-box { padding: 20px 22px; margin-bottom: 16px; }
+.album-box__kopf { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
+.album-box__kopf h3 { font-size: 22px; }
+.album-box__knoepfe { display: flex; flex-wrap: wrap; gap: 8px; }
+.album-box__knoepfe .mini { margin-left: 0; }
+.daumen { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin-top: 14px; }
+.daumen figure { margin: 0; position: relative; }
+.daumen img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; background: #DCE6EF; display: block; }
+.daumen input { width: 100%; font: inherit; font-size: 13px; padding: 6px 8px; margin-top: 4px; border: 1px solid #C9D4DF; border-radius: 6px; }
+.daumen .weg { position: absolute; top: 6px; right: 6px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(165,40,31,.92); color: #fff; font-size: 20px; line-height: 1; cursor: pointer; }
+.fortschritt { margin-top: 10px; font-weight: 600; color: var(--blau-mittel); }
+.vorschaubild { max-width: 320px; border-radius: 8px; margin: 8px 0; background: #DCE6EF; }
+
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(120px); background: var(--blau); color: #fff; padding: 12px 20px; border-radius: 10px; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,.2); transition: transform .25s; z-index: 200; }
+.toast.zeigen { transform: translateX(-50%) translateY(0); }
+.toast.fehler { background: #A5281F; }
+
+/* Übersicht */
+.schnell { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.schnell__knopf { font: inherit; font-weight: 700; font-size: 18px; min-height: 76px; border: 0; border-radius: 12px; background: var(--akzent); color: var(--blau); cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 12px 18px; text-align: left; box-shadow: var(--schatten); }
+.schnell__knopf:hover { background: #F6C766; }
+.schnell__plus { width: 40px; height: 40px; border-radius: 50%; background: var(--blau); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 26px; flex: none; }
+.zahlenreihe { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.zahlkarte { font: inherit; text-align: left; border: 0; padding: 16px 18px; cursor: pointer; }
+.zahlkarte:hover { box-shadow: 0 0 0 2px var(--blau-mittel); }
+.zahlkarte b { display: block; font-family: var(--schrift-titel); font-size: 32px; color: var(--blau); }
+.zahlkarte span { color: var(--text-leise); font-size: 15px; }
+.uebersicht-liste { list-style: none; margin: 0; padding: 0; }
+.uebersicht-liste li { padding: 8px 0; border-top: 1px solid var(--linie); }
+.uebersicht-liste li:first-child { border-top: 0; }
+.uebersicht-liste b { color: var(--blau); margin-right: 8px; }
+
+.vorschaubild--rund { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; }
+.mini-foto { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; display: block; background: #DCE6EF; }
+.mini-foto--leer { border: 2px dashed #C9D4DF; background: transparent; }
+
+/* V1.2: gut sichtbare Einstiegshilfe für Vereinsredakteure */
+.hilfe-einstieg,.warnung-einstieg{padding:12px 14px;border-radius:10px;line-height:1.55;margin:12px 0;font-size:.95rem}.hilfe-einstieg{background:#eef5ff;color:#183b65}.warnung-einstieg{background:#fff3df;color:#603c08}
+
+/* ===== V2.1: Bedienung für Laien ===== */
+.reiter { display: block; }
+.reiter__gruppe { display: flex; flex-wrap: wrap; gap: 6px; }
+.reiter__gruppe--weitere { margin-top: 8px; padding-top: 8px; border-top: 1px dashed #C9D4DF; }
+.reiter__mehr { font: inherit; font-weight: 700; font-size: 16px; min-height: 48px; padding: 10px 18px; border-radius: 10px; border: 1px dashed #9AAABB; background: transparent; color: var(--blau-mittel); cursor: pointer; }
+.reiter__auswahl { display: none; width: 100%; font: inherit; font-size: 18px; font-weight: 700; min-height: 52px; padding: 10px 14px; border-radius: 10px; border: 2px solid var(--blau); color: var(--blau); background: var(--weiss); }
+.toast__knopf { font: inherit; font-weight: 700; margin-left: 12px; padding: 6px 12px; border-radius: 8px; border: 0; background: var(--akzent); color: var(--blau); cursor: pointer; }
+.meldung--hinweis { background: #FFF3D1; color: #5C4300; margin-top: 16px; }
+.ist-entwurf { font-weight: 700; color: #8A5A00 !important; }
+.ist-entwurf::before { content: "✎ "; }
+
+@media (max-width: 700px) {
+  .reiter__gruppe, .reiter__gruppe--weitere { display: none !important; }
+  .reiter__auswahl { display: block; }
+  .kopf-aktionen .knopf { padding: 6px 12px; min-height: 40px; font-size: 14px; }
+  .bereich-kopf h2 { font-size: 26px; }
+  .bereich-kopf .knopf { width: 100%; }
+  /* Listen als Karten statt breiter Tabelle */
+  .eintraege table, .eintraege tbody, .eintraege tr, .eintraege td { display: block; min-width: 0; width: 100%; }
+  .eintraege table { min-width: 0; }
+  .eintraege thead { display: none; }
+  .eintraege tr { padding: 12px 14px; border-top: 1px solid var(--linie); }
+  .eintraege tr:first-child { border-top: 0; }
+  .eintraege td { border: 0; padding: 3px 0; }
+  .eintraege td[data-label]::before { content: attr(data-label) ": "; font-size: 13px; color: var(--text-leise); }
+  .eintraege td[data-label]:empty { display: none; }
+  .eintraege td.aktionen { text-align: left; padding-top: 10px; display: flex; gap: 8px; }
+  .eintraege td.aktionen .mini { margin-left: 0; flex: 1; min-height: 44px; }
+  .editor { padding: 18px; }
+  .editor__knoepfe .knopf { flex: 1; }
+}
+@media (max-width: 700px) {
+  .marke__name { font-size: 20px; }
+  .marke__sub { display: none; }
+  .kopf__innen { gap: 8px; }
+  .kopf-aktionen { flex-wrap: nowrap; gap: 6px; }
+  .zahlenreihe { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .schnell__knopf { min-height: 60px; font-size: 17px; }
+}
+
+.etikett--beispiel { background: #FCEBD2; color: #7A4A0C; }
